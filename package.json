@@ -2,6 +2,7 @@
   "name": "bycosmo.github.io",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
