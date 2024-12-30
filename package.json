@@ -13,5 +13,9 @@
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^5.1.1"
+  },
+  "devDependencies": {
+    "@unocss/reset": "^0.65.3",
+    "unocss": "^0.65.3"
   }
 }
