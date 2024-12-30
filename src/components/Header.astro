@@ -1,11 +1,12 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+const IS_HOME = Astro.routePattern === '/';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		{!IS_HOME && <h2><a href="/">{SITE_TITLE}</a></h2>}
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -48,6 +49,7 @@ import { SITE_TITLE } from '../consts';
 		padding: 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		
 	}
 	h2 {
 		margin: 0;
@@ -59,9 +61,17 @@ import { SITE_TITLE } from '../consts';
 		text-decoration: none;
 	}
 	nav {
-		display: flex;
+		display: grid;
 		align-items: center;
-		justify-content: space-between;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	nav .internal-links {
+		grid-column: 2;
+		justify-self: center;
+	}
+	nav .social-links {
+		grid-column: 3;
+		justify-self: end;
 	}
 	nav a {
 		padding: 1em 0.5em;
