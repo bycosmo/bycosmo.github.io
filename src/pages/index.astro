@@ -19,20 +19,17 @@ posts.length = 5;
 	<body>
 		<Header />
 		<main>
-			<h2>Welcome, to the far reaches of space!</h2>
+			<h2 text-10>Welcome, to the far reaches of space!</h2>
 			<p>
 				You have arrived at the project site for Cosmo, an opinionated framework for building websites with Web Components.
 			</p>
-			<blockquote bg-sky-100 p-5>
-				This framework is early days. Somewhere past an outline, but a long time until we get to a working product.<br/>
-				The hope of making this site and the blog attached to it is I'll have a place to document things as I develop them.
-			</blockquote>
-			<h2>Latest Updates</h2>
+			<h2 text-8>Latest Updates</h2>
 			<ul>
 				{posts.map((post) => {
-					return <li>
-						<h3>{post.data.title}</h3>
-						<p>{post.data.description}</p>
+					// @ts-ignore
+					return <li p-3 bg-sky-100 rounded-2 flex flex-col>
+						<h3 text-5>{post.data.title}</h3>
+						<p text-4 m-0>{post.data.description}</p>
 						<FormattedDate date={post.data.pubDate!}></FormattedDate>
 					</li>
 				})}
