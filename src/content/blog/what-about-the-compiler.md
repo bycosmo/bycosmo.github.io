@@ -1,6 +1,7 @@
 ---
 title: What about the compiler?
 description: Let's go over what exactly the compiler should do. What it should take in, what it should spit out, and what else needs to happen along the way.
+pubDate: 01-03-2025
 ---
 
 It's no secret that Cosmo takes a lot of inspiration from Astro. From the way the `.cosmo` file looks, to the fact that I chose Golang for the compiler, it's been a guiding north star. But there are differences that I need to talk out and solidify. 
