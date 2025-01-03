@@ -1,18 +1,17 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
-const IS_HOME = Astro.routePattern === '/';
 ---
 
-<header>
+<header bg-green-900 c-green-50 border-b-3 border-b-green-950>
 	<nav>
-		{!IS_HOME && <h2><a href="/">{SITE_TITLE}</a></h2>}
+		<h2><a href="/" c-inherit hover:c-green-200><code>{SITE_TITLE}</code></a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
 		<div class="social-links">
-			<a href="https://github.com/bycosmo/cosmo" target="_blank">
+			<a href="https://github.com/bycosmo/cosmo" target="_blank" c-inherit hover:c-green-200>
 				<span class="sr-only">Go to bycosmo's GitHub repo</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
 					<path
@@ -28,8 +27,6 @@ const IS_HOME = Astro.routePattern === '/';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 		
 	}
 	h2 {
@@ -56,13 +53,11 @@ const IS_HOME = Astro.routePattern === '/';
 	}
 	nav a {
 		padding: 1em 0.5em;
-		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
 	nav a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
 	}
 	.social-links,
 	.social-links a {

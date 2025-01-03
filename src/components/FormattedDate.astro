@@ -7,7 +7,7 @@ type Props = HTMLAttributes<'time'> & {
 const { date } = Astro.props;
 ---
 
-<time text-4 datetime={date.toISOString()}>
+<time class="nuke" text-3 datetime={date.toISOString()}>
 	{
 		date.toLocaleDateString('en-us', {
 			year: 'numeric',
