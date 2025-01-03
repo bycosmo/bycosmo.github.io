@@ -1,5 +1,5 @@
 ---
-title: What about the compiler?
+title: What does the compiler do?
 description: Let's go over what exactly the compiler should do. What it should take in, what it should spit out, and what else needs to happen along the way.
 pubDate: 01-03-2025
 ---
