@@ -13,13 +13,15 @@ limit = +limit;
 if (limit > 0) {
     posts.length = limit;
 }
+// const makeUrl = (id:string) => Astro.url.href.match('/blog') ? `/${id}` : `/blog/${id}`;
+const base = import.meta.env.PROD && Astro.url.href.includes('/blog') ? '' : '/blog'
 ---
 <ul flex flex-col gap-3>
     {posts.map(({ data, id }) => <li class="post-card" p-3 bg-green-100 c-green-900 hover:bg-green-950 hover:c-green-50 transition rounded-2 flex flex-col relative>
         <h3 text-5 class="nuke">{data.title}</h3>
         <p text-4 m-0>{data.description}</p>
         <FormattedDate date={data.pubDate!}></FormattedDate>
-        <a href={`blog/${id}`} class="after:content-[''] after:absolute after:inset-0">
+        <a href={base+'/'+id} class="after:content-[''] after:absolute after:inset-0">
             <span class="sr-only">Read More</span>
         </a>
     </li>)}
