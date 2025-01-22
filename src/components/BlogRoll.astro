@@ -14,8 +14,6 @@ limit = +limit;
 if (limit > 0) {
     posts.length = limit;
 }
-// const makeUrl = (id:string) => Astro.url.href.match('/blog') ? `/${id}` : `/blog/${id}`;
-const base = Astro.props.isBlog ? '/' : '/blog/'
 ---
 <ul flex flex-col gap-3>
     {posts.map(({ data, id }) => (
@@ -23,7 +21,7 @@ const base = Astro.props.isBlog ? '/' : '/blog/'
             <h3 text-5 class="nuke">{data.title}</h3>
             <p text-4 m-0>{data.description}</p>
             <FormattedDate date={data.pubDate!}></FormattedDate>
-            <a href={base+id} class="after:content-[''] after:absolute after:inset-0">
+            <a href={'/'+id} class="after:content-[''] after:absolute after:inset-0">
                 <span class="sr-only">Read More</span>
             </a>
         </li>
